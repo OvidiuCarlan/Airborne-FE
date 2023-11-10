@@ -1,0 +1,9 @@
+.signup-link{
+    cursor: pointer;
+    text-decoration: none;
+    color: gray;
+    font-size: 12px;
+}
+.login-link:hover{
+    color: darkblue;    
+}
