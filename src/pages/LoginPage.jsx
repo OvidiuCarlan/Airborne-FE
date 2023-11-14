@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import FormInput from "../components/FormInputs";
 import styles from"./loginPage.module.css";
+import UserService from "../services/UserService";
 
 function LoginPage () {
     const [values, SetValues] = useState({
-        username:"",
+        email:"",
         password:""
     });
 
     const inputs = [
         {
             id: 1,
-            name: "username",
+            name: "email",
             type: "text",
-            placeholder: "Username",
+            placeholder: "Email",
             errorMessage: "",
-            label: "Username",
+            label: "Email",
             required: true
         },
         {
@@ -29,8 +30,16 @@ function LoginPage () {
         }
     ]
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async (e) =>{
         e.preventDefault();
+
+        try{
+            const userData = await UserService.loginUser(values);
+            
+            console.log('Logged in', userData);            
+        } catch(error){
+            console.error('Login failed', error.message);
+        }
     };
 
     const onChange = (e) =>{
