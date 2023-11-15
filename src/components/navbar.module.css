@@ -1,0 +1,42 @@
+.left-container{
+    background-color: 	#333333;
+    width: 100%;   
+    
+}
+.right-container{
+    background-color: green;
+    width: 100%;
+    background-color: 	#333333;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.logo{
+    max-width: 200px;
+    margin-left: 20px;
+}
+.button-list{
+    list-style: none;
+    display: flex;
+    flex-direction: row;  
+    justify-content: flex-end;  
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    margin-right: 40px;
+}
+.button-list li{    
+    margin: 10px 20px 10px 20px;
+    color: white;
+    font-size: 20px;
+    justify-content: center; 
+    align-items: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-list li:hover{
+    cursor: pointer;
+    color: darkgray;
+}

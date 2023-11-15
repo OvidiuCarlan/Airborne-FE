@@ -26,6 +26,7 @@ function loginUser(LoginItem){
                 const accessToken = response.data.accessToken;
                 TokenManager.setAccessToken(accessToken);
                 alert("User Logged In");
+                window.location.href = '/LandingPage';
             } else {
                 alert("Invalid response from the server");
             }
