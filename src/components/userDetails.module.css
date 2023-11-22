@@ -1,0 +1,32 @@
+.user-details-container{
+    background-color: #333333;;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 30px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 12px;
+}
+.avatar{
+    max-width: 205px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.user-details-top-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.avatar-container {
+    flex-shrink: 0; 
+}
+.logo-container{
+    flex-grow: 1;
+    text-align: center;
+}
+.user-info{
+    font-size: 18px;
+    margin-top: 10px;
+}
