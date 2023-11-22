@@ -1,0 +1,68 @@
+.post-container{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    width: 90%;
+    margin: 0 auto;
+}
+.create-post-button{
+    background-color: #ffe98a;
+    color: black;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 30px;
+}
+.create-post-button:hover{
+    background-color: rgb(197, 178, 33) ;
+}
+textarea{
+    background-color: #dddddd;
+    color: black;
+    padding: 1em;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    outline: none;
+    font-size: 16px;
+    line-height: 1.4;
+    width: 100%;
+    box-sizing: border-box;
+    height: 70px;
+    transition: all 0.2s;
+    resize: none;
+    margin: 20px 0 20px 0;
+    
+}
+textarea:hover{
+    cursor: pointer;
+    background-color: #eeeeee;
+}
+textarea:focus{
+    cursor: text;
+    color: #333333;
+    border-color: #333333;
+    background-color: #eeeeee;
+}
+form{
+    margin-top: 20px;
+}
+input[type="file"]{
+    display: none;
+}
+.upload{
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #383E42;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+.upload:hover{
+    background-color: #eeeeee;
+    color: #333333;
+}
+h2{
+    margin-top: 20px;
+}
