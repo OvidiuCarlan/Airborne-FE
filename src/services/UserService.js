@@ -1,5 +1,4 @@
 import axios from "axios";
-import LoginItem from "../components/User/LoginItem";
 import TokenManager from "./TokenManager";
 
 const hostname = 'http://localhost:8080'
@@ -39,7 +38,12 @@ function loginUser(LoginItem){
             }
         });    
 }
+function getLoggedUserData(id){
+    return axios.get(`${hostname}/users/${id}`, id)
+}
+
 export default{
     saveUser,
-    loginUser
+    loginUser,
+    getLoggedUserData
 }

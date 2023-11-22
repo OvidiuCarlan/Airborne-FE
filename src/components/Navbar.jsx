@@ -10,9 +10,9 @@ function Navbar () {
             </div>
             <div className={styles['right-container']}>
             <ul className={styles['button-list']}>
-                <li>Home</li>
-                <li>Profile</li>
-                <li>Info</li>
+                <li><a>Home</a></li>
+                <li><a href="/ProfilePage">Profile</a></li>
+                <li><a>Info</a></li>
             </ul>
             </div>
         </nav>
