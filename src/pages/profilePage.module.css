@@ -1,0 +1,23 @@
+.left-container{
+    background-color: #ffe98a;
+    height: 300px;
+    width: 250px;
+    border-radius: 12px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+.right-container{
+    background-color: #383E42;
+    height: 300px;
+    width: 100px;
+    border-radius: 12px;
+    margin-left: 10px;
+    flex-grow: 1;
+}
+.lower-container{
+    width: 63.5%;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}

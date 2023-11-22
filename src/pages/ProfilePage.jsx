@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar";
 import TokenManager from "../services/TokenManager";
 import UserService from "../services/UserService";
 import UserDetails from "../components/UserDetails";
+import styles from "./profilePage.module.css";
+import CreatePost from "../components/CreatePost";
 
 function ProfilePage() {
     const [user, setUser] = useState();
@@ -49,8 +51,15 @@ function ProfilePage() {
     return (
         <div>
             <Navbar />
-            <h1>Profile Page</h1>
             <ShowUserDetails />
+            <div className={styles['lower-container']}>
+                <div className={styles['left-container']}>
+
+                </div>
+                <div className={styles['right-container']}>
+                    <CreatePost/>
+                </div>
+            </div>
         </div>
     );
 }
