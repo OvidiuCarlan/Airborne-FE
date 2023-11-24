@@ -57,7 +57,7 @@ function ProfilePage() {
 
                 </div>
                 <div className={styles['right-container']}>
-                    <CreatePost/>
+                    <CreatePost userId={claims?.userId}/>
                 </div>
             </div>
         </div>

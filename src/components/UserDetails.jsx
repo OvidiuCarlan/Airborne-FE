@@ -6,7 +6,7 @@ import Avatar from '../assets/images/Avatar.png';
 function UserDetails(props) {
     const userDetails = props.userDetails.data;
     const claims = TokenManager.getClaims();
-    const id = claims.userId;vvvvvvvvvvvvv
+    const id = claims.userId;
 
     return (
         <div className={styles['user-details-container']}>
