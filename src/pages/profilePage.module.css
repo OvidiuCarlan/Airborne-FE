@@ -20,4 +20,13 @@
     margin-top: 20px;
     display: flex;
     flex-direction: row;
+    margin-bottom: 10px;
+}
+.user-details{
+    width: 63.5%;
+    margin: 0 auto;
+}
+.posts{
+    width: 63.5%;
+    margin: 0 auto;
 }

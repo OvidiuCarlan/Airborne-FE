@@ -1,0 +1,24 @@
+.post-outline{
+    background: #383E42;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 12px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.post{
+    min-height: 200px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+h2{
+    margin: 0;
+}
+.comments{
+    background-color: #ffe98a;
+    border-radius: 12px;
+}
+.post-image{
+    max-height: 600px;
+    max-width: 700px;
+}

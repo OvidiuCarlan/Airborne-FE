@@ -11,6 +11,15 @@ function savePost(PostItem){
     })
     .then(response => response.data)
 }
+function getPostsByUserId(id){
+    return axios.get(`${hostname}/posts/${id}`)
+    .then(response => response.data)
+    .catch(error => {
+        console.error("Error fetching posts: ", error);
+    });
+}
 export default{
     savePost,
+    getPostsByUserId,
 }
+

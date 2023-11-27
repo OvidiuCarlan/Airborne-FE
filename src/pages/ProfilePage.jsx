@@ -5,6 +5,7 @@ import UserService from "../services/UserService";
 import UserDetails from "../components/UserDetails";
 import styles from "./profilePage.module.css";
 import CreatePost from "../components/CreatePost";
+import PostList from "../components/PostList";
 
 function ProfilePage() {
     const [user, setUser] = useState();
@@ -51,15 +52,20 @@ function ProfilePage() {
     return (
         <div>
             <Navbar />
-            <ShowUserDetails />
+            <div className={styles['user-details']}>
+                <ShowUserDetails />
+            </div>            
             <div className={styles['lower-container']}>
                 <div className={styles['left-container']}>
 
                 </div>
                 <div className={styles['right-container']}>
                     <CreatePost userId={claims?.userId}/>
-                </div>
+                </div>                
             </div>
+            <div className={styles['posts']}>
+                <PostList userId={claims?.userId}/>
+            </div>          
         </div>
     );
 }
