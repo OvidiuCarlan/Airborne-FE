@@ -5,6 +5,7 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import LoginPage from './pages/LoginPage';
 import LandingPage from './pages/LandingPage';
 import ProfilePage from './pages/ProfilePage';
+import { UserProfilePage } from './pages/UserProfilePage';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                 <Route path='/SignupPage' element={<SignUpPage/>}/>
                 <Route path='/LandingPage' element={<LandingPage/>}/>
                 <Route path='/ProfilePage' element={<ProfilePage/>}/>
+                <Route path='/UserProfilePage/:id' element={<UserProfilePage/>}/>
             </Routes>
         </Router>
     </div>
