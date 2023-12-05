@@ -41,9 +41,22 @@ function loginUser(LoginItem){
 function getLoggedUserData(id){
     return axios.get(`${hostname}/users/${id}`, id)
 }
+function getFilterdSearchUsers(username){
+    if(username){
+        return axios.get(`${hostname}/users/search/${username}`)
+            .then(response => response.data)
+            .catch(error =>{
+                console.error("Error searching for users", error);
+            });
+    } else {
+        return Promise.resolve(null);
+    }
+    
+}
 
 export default{
     saveUser,
     loginUser,
-    getLoggedUserData
+    getLoggedUserData,
+    getFilterdSearchUsers
 }

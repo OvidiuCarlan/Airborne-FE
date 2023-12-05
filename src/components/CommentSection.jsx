@@ -3,14 +3,14 @@ import styles from "./commentSection.module.css";
 function Post () {    
     return(        
         <div className={styles['comments']}>
-            <div className="commnent-container">
-                <div class="comment">
-                    <p class="comment-author">John Doe</p>
-                    <p class="comment-text">This is a great post!</p>
+            <div className={styles['comment-container']}>
+                <div className={styles['comment']}>
+                    <p className={styles['comment-author']}>John Doe</p>
+                    <p className={styles['comment-text']}>This is a great post!</p>
                 </div>
-                <div class="comment">
-                    <p class="comment-author">Jane Smith</p>
-                    <p class="comment-text">I really enjoyed reading this!</p>
+                <div className={styles['comment']}>
+                    <p className={styles['comment-author']}>Jane Smith</p>
+                    <p className={styles['comment-text']}>I really enjoyed reading this!</p>
                 </div>
             </div>
 

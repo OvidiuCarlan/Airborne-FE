@@ -1,0 +1,24 @@
+.comments {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-color: white;
+    border-radius: 12px;
+  }
+  
+  .comment-container {
+  }
+  
+  .comment-form {
+    margin-top: auto;
+  }
+  .comment{
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 10px;
+    padding: 10px; 
+  }
+  .comment-form button{
+    background-color: #ffe98a;
+    color: black;
+  }
