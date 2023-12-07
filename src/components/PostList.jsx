@@ -22,7 +22,7 @@ function PostList ({userId}) {
 
     function displayPosts(postItems) {
         return postItems.map(post => (
-            <Post post={post}/>
+            <Post key={post.id} post={post}/>
         ))
     }
 
