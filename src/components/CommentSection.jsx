@@ -15,8 +15,8 @@ function Post () {
             </div>
 
             <form className={styles['comment-form']}>
-                <textarea id="comment" placeholder="Your Comment" required></textarea>
-                <button type="submit">Submit</button>
+                <textarea className={styles['comment-input']} placeholder=" Your Comment" required></textarea>
+                <button className={styles['comment-button']} type="submit">Submit</button>
             </form>
         </div>         
     );

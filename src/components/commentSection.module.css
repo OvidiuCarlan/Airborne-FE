@@ -7,18 +7,31 @@
     border-radius: 12px;
   }
   
-  .comment-container {
-  }
-  
   .comment-form {
     margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    padding: 0;
+    width: 450px;
   }
   .comment{
     border-bottom: 1px solid lightgrey;
     margin-bottom: 10px;
     padding: 10px; 
   }
-  .comment-form button{
+  .comment-input {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    flex: 0 0 80%;
+    border-radius: 0 0 0 12px;
+    height: auto;
+  }
+  .comment-button{
+    margin: 0;
     background-color: #ffe98a;
     color: black;
+    flex: 0 0 20%;
+    border-radius: 0 0 12px 0;
   }
