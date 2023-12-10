@@ -138,7 +138,7 @@ export function UserProfilePage(props){
                 <button onClick={handleButtonClick}>{getButtonText()}</button>
             </div>    
             <div className={styles['posts']}>
-                <PostList userId={id} />
+                <PostList userId={id} isProfilePage={true}/>
             </div>            
         </div>
     );
