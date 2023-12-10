@@ -1,6 +1,52 @@
 import styles from "./commentSection.module.css";
+import React, { useState } from 'react';
+import CommentService from "../services/CommentService";
 
-function Post () {    
+
+
+function CommentSection ({postId, userId}) {    
+    const [content, setContent] = useState('');
+    const [comment, setComment] = useState({
+        postId: postId,
+        userId: userId,
+        content: ""
+    });
+
+
+    const addComment = (comment) =>{
+        CommentService.saveComment(comment)
+        .then(data => {
+            console.log('Comment created', data);
+        })
+        .catch(response => {
+            alert(response.code);
+        })
+        .finally(() => {
+            console.log('Comment Created! ', comment);
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        const updatedComment = {
+            ...comment,
+            content: content
+        };
+         try{
+            await addComment(updatedComment);
+            console.log('Comment created: ', updatedComment);
+            setContent('');
+         } catch (error){
+            console.error('Error creating comment: ', error);
+            alert(error.code);
+         }
+    };
+
+
+    const handleContentChange = (e) => {
+        setContent(e.target.value);
+    };
     return(        
         <div className={styles['comments']}>
             <div className={styles['comment-container']}>
@@ -14,11 +60,11 @@ function Post () {
                 </div>
             </div>
 
-            <form className={styles['comment-form']}>
-                <textarea className={styles['comment-input']} placeholder=" Your Comment" required></textarea>
+            <form onSubmit={handleSubmit} className={styles['comment-form']}>
+                <textarea value={content} onChange={handleContentChange} className={styles['comment-input']} placeholder=" Your Comment" required></textarea>
                 <button className={styles['comment-button']} type="submit">Submit</button>
             </form>
         </div>         
     );
 }
-export default Post;
+export default CommentSection;
