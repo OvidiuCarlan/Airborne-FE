@@ -6,7 +6,9 @@
     background-color: white;
     border-radius: 12px;
   }
-  
+  .comment-container{
+    overflow-y: scroll;
+  }
   .comment-form {
     margin-top: auto;
     display: flex;
@@ -34,4 +36,9 @@
     color: black;
     flex: 0 0 20%;
     border-radius: 0 0 12px 0;
+  }
+  .no-comments{
+    color: gray;
+    text-align: center;   
+    margin-top: 10px;
   }

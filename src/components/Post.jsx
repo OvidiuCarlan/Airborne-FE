@@ -11,7 +11,7 @@ function Post ({post}) {
                 {image=="" || image==null?"": <img className={styles['post-image']} src={image}/>}
             </div>
             <div className={styles['comments']}>
-                <CommentSection postId={post.id} userId={post.userId}/>
+                <CommentSection postId={post.id}/>
             </div>          
         </div>
     );

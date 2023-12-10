@@ -1,17 +1,19 @@
 import styles from "./commentSection.module.css";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CommentService from "../services/CommentService";
+import Comment from "./Comment";
+import TokenManager from "../services/TokenManager";
 
 
-
-function CommentSection ({postId, userId}) {    
+function CommentSection ({postId}) {    
     const [content, setContent] = useState('');
+    const claims = TokenManager.getClaims();
+    const [comments, setComments] = useState([]);
     const [comment, setComment] = useState({
         postId: postId,
-        userId: userId,
+        userId: claims?.userId,
         content: ""
     });
-
 
     const addComment = (comment) =>{
         CommentService.saveComment(comment)
@@ -36,6 +38,7 @@ function CommentSection ({postId, userId}) {
          try{
             await addComment(updatedComment);
             console.log('Comment created: ', updatedComment);
+            setComments([...comments, updatedComment]);
             setContent('');
          } catch (error){
             console.error('Error creating comment: ', error);
@@ -47,17 +50,39 @@ function CommentSection ({postId, userId}) {
     const handleContentChange = (e) => {
         setContent(e.target.value);
     };
+
+    const getComments = async () => {
+        try {
+            const comments = await CommentService.getCommentSection(postId);
+            console.log("Comments received: ", comments);
+            setComments(comments.comments);
+        } catch (error) {
+            console.error("Error fetching comments", error);
+        }
+    };
+
+    useEffect(() => {
+        getComments();
+    }, []);
+
+    const ShowComments = ({ comments }) => {
+        if(!Array.isArray(comments)){
+            return <p className={styles['no-comments']}>No comments yet.</p>
+        }
+        return (
+            <ul>
+                {comments.map(comment =>(
+                    <Comment key={comment.id} comment={comment}/>
+                ))} 
+            </ul>
+           
+        );
+    }
+
     return(        
         <div className={styles['comments']}>
             <div className={styles['comment-container']}>
-                <div className={styles['comment']}>
-                    <p className={styles['comment-author']}>John Doe</p>
-                    <p className={styles['comment-text']}>This is a great post!</p>
-                </div>
-                <div className={styles['comment']}>
-                    <p className={styles['comment-author']}>Jane Smith</p>
-                    <p className={styles['comment-text']}>I really enjoyed reading this!</p>
-                </div>
+                <ShowComments comments={comments}/>
             </div>
 
             <form onSubmit={handleSubmit} className={styles['comment-form']}>
