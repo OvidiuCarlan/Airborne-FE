@@ -8,12 +8,24 @@ const CreatePost = ({ userId }) =>{
 
     const [content, setContent] = useState('');
     const [image, setImage] = useState('');
+    const date = new Date(); 
 
     const [post, SetPost] = useState({
         userId: userId ? userId : '',
         content: "",
-        image: ""
+        image: "",
+        date: ''
     });
+
+    const currentDate = new Intl.DateTimeFormat('en-US', {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: false,
+    }).format(date);
 
     const addPost = (post) =>{
 
@@ -36,6 +48,7 @@ const CreatePost = ({ userId }) =>{
             userId: userId || '',
             content: content,
             image: image,
+            date: currentDate
         };
 
         try {

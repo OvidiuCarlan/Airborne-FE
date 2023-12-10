@@ -7,15 +7,18 @@ function savePost(PostItem){
         id: 1,
         userId: PostItem.userId,
         content: PostItem.content,
-        image: PostItem.image
+        image: PostItem.image,
+        dateTime: PostItem.date
     })
     .then(response => response.data)
 }
-function getPostsByUserId(id){
-    return axios.get(`${hostname}/posts/${id}`)
+function getPostsByUserId(userId, page){
+
+    return axios.get(`${hostname}/posts/${userId}?page=${page}`)
     .then(response => response.data)
     .catch(error => {
         console.error("Error fetching posts: ", error);
+        throw error;
     });
 }
 export default{

@@ -90,6 +90,7 @@ export function UserProfilePage(props){
                 FriendshipService.deleteFriendship(friendship.id)
                 .then(() =>{
                     console.log("Friendship deleted successfully!");
+                    setFriendship({ ...friendship, status: 'NOT_FRIENDS' });
                 })
                 .catch(error => {
                     console.error("Failed to delete friendship:", error);
@@ -105,7 +106,7 @@ export function UserProfilePage(props){
           case 'REQUESTED':
             return 'Requested';
           case 'ACCEPTED':
-            return 'Friends';
+            return 'Remove friend';
           default:
             return 'Add friend';
         }

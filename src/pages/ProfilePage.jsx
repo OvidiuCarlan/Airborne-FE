@@ -20,7 +20,6 @@ function ProfilePage() {
                     console.log("User details received:", userDetails);
                     setUser(userDetails);
                     if (userDetails && typeof userDetails === 'object') {
-                        console.log("Setting user details:", userDetails);
                         setUser(userDetails);
                     } else {
                         console.error("Invalid user details format or missing data:", userDetails);

@@ -18,8 +18,9 @@ function App() {
                 <Route path='/LoginPage' element={<LoginPage/>}/>
                 <Route path='/SignupPage' element={<SignUpPage/>}/>
                 <Route path='/LandingPage' element={<LandingPage/>}/>
-                <Route path='/ProfilePage' element={<ProfilePage/>}/>
+                <Route path='/Profile' element={<ProfilePage/>}/>
                 <Route path='/UserProfilePage/:id' element={<UserProfilePage/>}/>
+                <Route path='/Home' element={<LandingPage/>}/>
             </Routes>
         </Router>
     </div>

@@ -23,8 +23,8 @@ function Navbar () {
             
             <div className={styles['right-container']}>
             <ul className={styles['button-list']}>
-                <li><a>Home</a></li>
-                <li><a href="/ProfilePage">Profile</a></li>
+                <li><a href='/Home'>Home</a></li>
+                <li><a href="/Profile">Profile</a></li>
                 <li><a>Info</a></li>
             </ul>            
             </div>
