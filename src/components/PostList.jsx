@@ -5,14 +5,14 @@ import styles from "./postList.module.css";
 import React, { useRef } from 'react';
 
 
-function PostList ({userId}) {    
+function PostList ({userId, isProfilePage}) {    
 
     const [postItems, setPostItems] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const containerRef = useRef(null);
     const [page, setPage] = useState(0);
-    const postsPerPage = 10;
+    // const postsPerPage = 10;
 
 
     
@@ -20,8 +20,15 @@ function PostList ({userId}) {
         setIsLoading(true);
         setError(null);
        
+        let response;
+
         try {
-            const response = await PostService.getPostsByUserId(userId, page);
+            if(isProfilePage){
+                response = await PostService.getPostsByUserId(userId, page);
+            }
+            else{
+                response = await PostService.getFeedPosts(userId, page);
+            }
             console.log("POSTS::", response);
             setPostItems(prevItems => [...prevItems, ...response.posts]);
             setPage(prevPage => prevPage + 1);

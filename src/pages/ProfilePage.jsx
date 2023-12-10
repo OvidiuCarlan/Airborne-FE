@@ -63,7 +63,7 @@ function ProfilePage() {
                 </div>                
             </div>
             <div className={styles['posts']}>
-                <PostList userId={claims?.userId}/>
+                <PostList userId={claims?.userId} isProfilePage={true}/>
             </div>          
         </div>
     );

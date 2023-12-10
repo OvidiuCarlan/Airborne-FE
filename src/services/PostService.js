@@ -21,8 +21,19 @@ function getPostsByUserId(userId, page){
         throw error;
     });
 }
+
+function getFeedPosts(userId, page){
+    return axios.get(`${hostname}/posts/feed/${userId}?page=${page}`)
+    .then(response => response.data)
+    .catch(error => {
+        console.error("Error fetching feed posts: ", error);
+        throw error; 
+    })
+}
+
 export default{
     savePost,
     getPostsByUserId,
+    getFeedPosts,
 }
 
