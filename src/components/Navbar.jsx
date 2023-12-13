@@ -25,7 +25,7 @@ function Navbar () {
             <ul className={styles['button-list']}>
                 <li><a href='/Home'>Home</a></li>
                 <li><a href="/Profile">Profile</a></li>
-                <li><a>Info</a></li>
+                <li><a href="/Messages">Messages</a></li>
             </ul>            
             </div>
         </nav>

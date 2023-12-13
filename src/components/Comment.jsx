@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./comment.module.css";
 import UserService from "../services/UserService";
+import { Link } from "react-router-dom";
 
 function Comment (comment) {
     const {id, postId, userId, content} = comment.comment;
@@ -11,7 +12,6 @@ function Comment (comment) {
     const getUserDetails = async () => {
         try {
             const userDetails = await UserService.getLoggedUserData(userId);
-            console.log("User details received:", userDetails);
             setUser(userDetails);
         } catch (error) {
             console.error("Error fetching user details:", error);
@@ -31,7 +31,7 @@ function Comment (comment) {
             ) : (
                 <>
                     {user && user.data.name && (
-                        <p className={styles['comment-author']}>{user.data.name}</p>
+                        <Link to={`/UserProfilePage/${userId}`} className={styles['comment-author']}>{user.data.name}</Link>
                     )}
                     <p className={styles['comment-text']}>{content}</p>
                 </>

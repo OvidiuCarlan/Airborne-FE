@@ -3,7 +3,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 } 
 ul{
+    width: 100%;
+}
+.infinite-scroll{
+    width: 100%
+}
+.infinite-scroll-component{
     width: 100%;
 }

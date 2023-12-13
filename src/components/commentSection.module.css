@@ -8,6 +8,7 @@
   }
   .comment-container{
     overflow-y: scroll;
+    max-height: 440px;
   }
   .comment-form {
     margin-top: auto;

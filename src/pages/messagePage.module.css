@@ -1,0 +1,52 @@
+.message_box{
+    background-color: #383E42;
+    color: white;
+    margin: auto;
+    margin-top: 30px;
+    width: 63.5%;
+    min-height: calc(100vh - 140px);
+    max-height: calc(100vh - 140px);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+}
+.message_box_left{
+    background-color: inherit;
+    flex: 0 0 500px;
+    border-radius: 12px 0 0 12px;
+    border-right: 3px solid gray;
+    display: flex;
+    flex-direction: column;
+}
+.message_box_left p{
+    text-align: left;
+    margin: 20px;
+    color: white;
+    font-size: 30px;
+}
+.message_box_right{
+    background-color: inherit;
+    flex: 1;
+    border-radius: 0 12px 12px 0;   
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.message_box_right h1{
+    color: white;
+}
+.message_text {
+    margin-top: 20px;
+}
+.message_content {
+    text-align: center;
+}
+.message_icon {
+    width: 100px;
+    height: auto;
+}
+.no-friends{
+    color: gray;
+    text-align: center;   
+    margin-top: 10px;
+}

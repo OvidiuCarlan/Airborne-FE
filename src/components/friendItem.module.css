@@ -1,0 +1,20 @@
+.picture{
+    height: 50px;
+    border-radius: 50px;
+    margin: 10px 30px 10px 30px;
+}
+.friend_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 2px solid gray;
+}
+.friend_container:hover{
+    cursor: pointer;
+    background-color: gray;
+}
+.friend_container p{
+    border: none;
+    font-size: 20px;
+    color: lightgray;
+}

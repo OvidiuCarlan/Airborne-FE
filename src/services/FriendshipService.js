@@ -32,8 +32,17 @@ function deleteFriendship(id){
             throw error;
         });
 }
+function getAllFriends(id){
+    return axios.get(`${hostname}/friendships/all/${id}`)
+    .then(response => response.data)
+    .catch(error => {
+        console.error("Error fetching friend list: ", error);
+        throw error; 
+    })
+}
 export default{
     addFriend,
     checkFriendship,
     deleteFriendship,
+    getAllFriends,
 }

@@ -38,7 +38,7 @@ function CommentSection ({postId}) {
          try{
             await addComment(updatedComment);
             console.log('Comment created: ', updatedComment);
-            setComments([...comments, updatedComment]);
+            setComments([updatedComment, ...comments]);
             setContent('');
          } catch (error){
             console.error('Error creating comment: ', error);
@@ -47,9 +47,9 @@ function CommentSection ({postId}) {
     };
 
 
-    const handleContentChange = (e) => {
-        setContent(e.target.value);
-    };
+    // const handleContentChange = (e) => {
+    //     setContent(e.target.value);
+    // };
 
     const getComments = async () => {
         try {
@@ -66,7 +66,7 @@ function CommentSection ({postId}) {
     }, []);
 
     const ShowComments = ({ comments }) => {
-        if(!Array.isArray(comments)){
+        if(!Array.isArray(comments) || comments.length === 0){
             return <p className={styles['no-comments']}>No comments yet.</p>
         }
         return (
@@ -86,7 +86,7 @@ function CommentSection ({postId}) {
             </div>
 
             <form onSubmit={handleSubmit} className={styles['comment-form']}>
-                <textarea value={content} onChange={handleContentChange} className={styles['comment-input']} placeholder=" Your Comment" required></textarea>
+                <textarea value={content} onChange={(e) => setContent(e.target.value)} className={styles['comment-input']} placeholder=" Your Comment" required></textarea>
                 <button className={styles['comment-button']} type="submit">Submit</button>
             </form>
         </div>         

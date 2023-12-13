@@ -6,6 +6,7 @@ import LoginPage from './pages/LoginPage';
 import LandingPage from './pages/LandingPage';
 import ProfilePage from './pages/ProfilePage';
 import { UserProfilePage } from './pages/UserProfilePage';
+import MessagePage from './pages/MessagePage';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
                 <Route path='/Profile' element={<ProfilePage/>}/>
                 <Route path='/UserProfilePage/:id' element={<UserProfilePage/>}/>
                 <Route path='/Home' element={<LandingPage/>}/>
+                <Route path='/Messages' element={<MessagePage/>}/>
             </Routes>
         </Router>
     </div>
