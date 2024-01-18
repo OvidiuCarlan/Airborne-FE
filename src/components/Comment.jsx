@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Comment (comment) {
     const {id, postId, userId, content} = comment.comment;
-    const [user, setUser] = useState('');
+    const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     
 
@@ -21,7 +21,7 @@ function Comment (comment) {
         }
     };
     useEffect(() => {
-        getUserDetails();
+        if (user === null) getUserDetails();
     }, []);
 
     return(

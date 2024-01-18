@@ -7,6 +7,7 @@ import LandingPage from './pages/LandingPage';
 import ProfilePage from './pages/ProfilePage';
 import { UserProfilePage } from './pages/UserProfilePage';
 import MessagePage from './pages/MessagePage';
+import StatisticsPage from './pages/StatisticsPage';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
                 <Route path='/UserProfilePage/:id' element={<UserProfilePage/>}/>
                 <Route path='/Home' element={<LandingPage/>}/>
                 <Route path='/Messages' element={<MessagePage/>}/>
+                <Route path='/Statistics' element={<StatisticsPage/>}/>
             </Routes>
         </Router>
     </div>

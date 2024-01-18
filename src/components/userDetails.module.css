@@ -29,3 +29,30 @@
     font-size: 18px;
     margin-top: 10px;
 }
+.user-details-bootom-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+.user-details-bootom-container-right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+}
+.report{
+    height: 30px;
+}
+.report:hover{
+    cursor: pointer;
+}
+.report-buttons-box{
+    display: flex;
+    flex-direction: row;
+}
+.report-buttons{
+    width: 140px;
+    margin-right: 20px;
+    background-color: #ffe98a;
+    color: #383E42;
+}

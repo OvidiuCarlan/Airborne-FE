@@ -58,10 +58,9 @@ function PostList ({userId, isProfilePage}) {
     }, [userId]);
 
     return(
-        <div className={styles['post-list']} ref={containerRef}>
+        <div id="divv" className={styles['post-list']} ref={containerRef}>
             <InfiniteScroll
                 className={styles['infinite-scroll']}
-                style={{ width: '100%' }}
                 dataLength={postItems.length}
                 next={getPostList}
                 hasMore={!isLoading}

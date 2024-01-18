@@ -51,12 +51,19 @@ function getFilterdSearchUsers(username){
     } else {
         return Promise.resolve(null);
     }
-    
+}
+
+function updateUser(id, request)
+{
+return axios.put(`${hostname}/users/${id}`, request,{
+    withCredentials: true
+})
 }
 
 export default{
     saveUser,
     loginUser,
     getLoggedUserData,
-    getFilterdSearchUsers
+    getFilterdSearchUsers,
+    updateUser,
 }

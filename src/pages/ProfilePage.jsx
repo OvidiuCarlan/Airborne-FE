@@ -6,6 +6,7 @@ import UserDetails from "../components/UserDetails";
 import styles from "./profilePage.module.css";
 import CreatePost from "../components/CreatePost";
 import PostList from "../components/PostList";
+import DetailsBox from "../components/DetailsBox";
 
 function ProfilePage() {
     const [user, setUser] = useState();
@@ -56,7 +57,7 @@ function ProfilePage() {
             </div>            
             <div className={styles['lower-container']}>
                 <div className={styles['left-container']}>
-
+                    {user && <DetailsBox id={user.data.id} name={user.data.name} email={user.data.email} />}
                 </div>
                 <div className={styles['right-container']}>
                     <CreatePost userId={claims?.userId}/>

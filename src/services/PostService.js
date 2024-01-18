@@ -30,10 +30,21 @@ function getFeedPosts(userId, page){
         throw error; 
     })
 }
+function getUserPostCount() {
+    return axios.get(`${hostname}/posts/statistics`)
+    .then(response => response.data);
+}
+
+
+function deletePost(postId, userId) {
+    return axios.delete(`${hostname}/posts/${postId}/${userId}`);
+}
 
 export default{
     savePost,
     getPostsByUserId,
     getFeedPosts,
+    getUserPostCount,
+    deletePost
 }
 
